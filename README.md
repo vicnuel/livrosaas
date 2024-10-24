@@ -1,33 +1,43 @@
-# Nome do Mini Projeto
+# Autenticação com NextAuth, Prisma e Next.js 15
 
-(um parágrafo explicando)
+Neste mini projeto, você irá implementar a autenticação em um hipotético SaaS de Livros de Programação. Usaremos o NextAuth para gerenciar a autenticação e o Prisma para a interação com o banco de dados, enquanto nosso frameworks será o Next.js 15. O design já está preparado, e o foco será na implementação das funcionalidades sem a necessidade de modificar muito o HTML e o CSS.
 
 ## 🤓 Antes de começar
 
-(Coloque aqui algum setup / boilerplate e explicações se houver. Se não houver, essa seção pode ser apagada)
+Para este projeto, já temos o template inicial do projeto preparado no repositório. Ao fazer o fork você encontrará todos os arquivos iniciais. 
 
 ## 🔨 Requisitos
 
-- Requisito 1
-- Requisito 2
+- Faça a instalação e o setup do NextAuth v5
 
-	> 👀 **Dicas:**
-	> - Dica A sobre Req 2.
-	> - Dica B sobre Req 2.
+- Crie e gerencie sua base de dados usando o Prisma
+  - Você precisará, pelo menos, de uma tabela de usuários
+	
+  > 👀 **Dicas:**
+  > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação.
+  > - Use o Prisma para facilitar a criação e migração do banco de dados.
 
-- Requisito 3
-- ...
+- Crie a funcionalidade de registrar usuários usando a tela de cadastro
+  - Use, na medida do possível, _server actions_.
+  - Um usuário deverá possuir _nome_, _email_ e _senha_.
+  - A senha deverá ser criptografada antes de ser salva na base de dados.
+  - A tela de cadastro não pode ser acessível a usuários logados (redirecione ao dashboard)
+
+- Crie a funcionalidade de logar usuários usando a tela de login
+  - Use, na medida do possível, _server actions_.
+  - Ao logar, redirecione o usuário para a tela de dashboard.
+  - A tela de login não pode ser acessível a usuários logados (redirecione ao dashboard)
+ 
+- Crie a funcionalidade de deslogar o usuário. 
+
 
 ## 🔨 Desafio extra para quem quer ir além
 
-(Essa seção é opcional)
-
-- Requisito extra 1. 
-- Requisito extra 2.
+- Implemente uma página de perfil onde o usuário poderá visualizar e editar suas informações como _nome_ e _senha_. 
 
 ## 🎨 Design Sugerido
 
-Temos uma sugestão de design no Figma. Entretanto, fique à vontade para montar a aplicação conforme a sua criatividade.
+O layout está no Figma e já está implementado no projeto. Você não precisará implementá-lo. 
 
 ### Figma
 
@@ -37,15 +47,22 @@ Temos uma sugestão de design no Figma. Entretanto, fique à vontade para montar
 
 ### O que você irá praticar:
 
-#### React
+#### Next.js
 
-- Habilidade 1 do React
-- Habilidade 2
+- Conhecimentos sobre a configuração de páginas e rotas dinâmicas.
+- Implementação de middlewares para proteger rotas de acesso restrito.
 
-#### TailwindCSS
+#### NextAuth
 
-- Habilidade 1 do TailwindCSS
+- Aprender sobre autenticação em aplicações Next.js.
+- Uso de callbacks e estratégias de autenticação.
+
+#### Prisma
+
+- Gerenciar banco de dados de forma eficiente e intuitiva.
+- Criação de modelos e migrações com Prisma.
+
 
 ### Pré requisitos
 
-(coloque aqui se houver algum)
+- Conhecimentos em JavaScript, React e NextJs.
