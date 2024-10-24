@@ -8,20 +8,24 @@ Para este projeto, já temos o template inicial do projeto preparado no reposit�
 
 ## 🔨 Requisitos
 
-- Faça a instalação e o setup do NextAuth v5
+- Faça a instalação e o setup do NextAuth v5.
+  - O único provedor que você irá usar neste Mini Projeto é o `Credentials`. 
 
 - Crie e gerencie sua base de dados usando o Prisma
   - Você precisará, pelo menos, de uma tabela de usuários
 	
   > 👀 **Dicas:**
-  > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação.
-  > - Use o Prisma para facilitar a criação e migração do banco de dados.
+  > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação e o Prisma.
 
 - Crie a funcionalidade de registrar usuários usando a tela de cadastro
   - Use, na medida do possível, _server actions_.
   - Um usuário deverá possuir _nome_, _email_ e _senha_.
   - A senha deverá ser criptografada antes de ser salva na base de dados.
   - A tela de cadastro não pode ser acessível a usuários logados (redirecione ao dashboard)
+
+      > 👀 **Dicas:**
+      > - O NextAuth auxilia no login do usuário - a implementação do cadastro de usuário deverá ser feita por você.
+
 
 - Crie a funcionalidade de logar usuários usando a tela de login
   - Use, na medida do possível, _server actions_.
