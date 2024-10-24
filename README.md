@@ -6,16 +6,18 @@ Neste mini projeto, você irá implementar a autenticação em um hipotético Sa
 
 Para este projeto, já temos o template inicial do projeto preparado no repositório. Ao fazer o fork você encontrará todos os arquivos iniciais. 
 
+Apesar de, na Dashboard, existir citação à assinaturas, não é necessário se preocupar com assinaturas e pagamentos nesse Mini Projeto. O foco aqui é autenticação. 
+
 ## 🔨 Requisitos
 
-- Faça a instalação e o setup do NextAuth v5.
+- Faça a instalação e o setup do NextAuth v5 (a última versão é importante).
   - O único provedor que você irá usar neste Mini Projeto é o `Credentials` (login com email e senha). 
 
 - Crie e gerencie sua base de dados usando o Prisma
   - Você precisará, pelo menos, de uma tabela de usuários
 	
     > 👀 **Dicas:**
-    > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação e o Prisma.
+    > - Consulte a documentação do NextAuth para entender como configurar o Prisma em conjunto com NextAuth.
 
 - **Funcionalidade de registrar usuários usando a tela de cadastro**
   - Use, na medida do possível, _server actions_.
@@ -24,7 +26,7 @@ Para este projeto, já temos o template inicial do projeto preparado no reposit�
   - A tela de cadastro não pode ser acessível a usuários logados (redirecione ao dashboard)
 
       > 👀 **Dicas:**
-      > - O NextAuth auxilia no login do usuário - a implementação do cadastro de usuário deverá ser feita por você.
+      > - O NextAuth auxilia apenas no login do usuário - a implementação do cadastro de usuário deverá ser feita por você.
 
 - **Funcionalidade de logar usuários usando a tela de login**
   - Use, na medida do possível, _server actions_.
@@ -37,7 +39,6 @@ Para este projeto, já temos o template inicial do projeto preparado no reposit�
   - Na home, quando o usuário estiver logado, o botão da Navbar deverá ser `Dashboard`. Quando o usuário estiver deslogado, o botão deverá ser `Login`.
   - Um usuário deslogado não poderá acessar a Dashboard.
   - Um usuário logado não poderá acessar as telas de login e cadastro. 
-
 
 ## 🔨 Desafio extra para quem quer ir além
 
