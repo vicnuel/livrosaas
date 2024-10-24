@@ -33,7 +33,7 @@ Apesar de, na Dashboard, existir citação à assinaturas, não é necessário s
   - Ao logar, redirecione o usuário para a tela de dashboard.
   - A tela de login não pode ser acessível a usuários logados (redirecione ao dashboard)
  
-- **Funcionalidade de deslogar o usuário. **
+- **Funcionalidade de deslogar o usuário.**
 
 - **Navegação e renderização condicional**
   - Na home, quando o usuário estiver logado, o botão da Navbar deverá ser `Dashboard`. Quando o usuário estiver deslogado, o botão deverá ser `Login`.
