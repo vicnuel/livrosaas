@@ -9,15 +9,15 @@ Para este projeto, já temos o template inicial do projeto preparado no reposit�
 ## 🔨 Requisitos
 
 - Faça a instalação e o setup do NextAuth v5.
-  - O único provedor que você irá usar neste Mini Projeto é o `Credentials`. 
+  - O único provedor que você irá usar neste Mini Projeto é o `Credentials` (login com email e senha). 
 
 - Crie e gerencie sua base de dados usando o Prisma
   - Você precisará, pelo menos, de uma tabela de usuários
 	
-  > 👀 **Dicas:**
-  > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação e o Prisma.
+    > 👀 **Dicas:**
+    > - Consulte a documentação do NextAuth para entender como configurar os provedores de autenticação e o Prisma.
 
-- Crie a funcionalidade de registrar usuários usando a tela de cadastro
+- **Funcionalidade de registrar usuários usando a tela de cadastro**
   - Use, na medida do possível, _server actions_.
   - Um usuário deverá possuir _nome_, _email_ e _senha_.
   - A senha deverá ser criptografada antes de ser salva na base de dados.
@@ -26,13 +26,17 @@ Para este projeto, já temos o template inicial do projeto preparado no reposit�
       > 👀 **Dicas:**
       > - O NextAuth auxilia no login do usuário - a implementação do cadastro de usuário deverá ser feita por você.
 
-
-- Crie a funcionalidade de logar usuários usando a tela de login
+- **Funcionalidade de logar usuários usando a tela de login**
   - Use, na medida do possível, _server actions_.
   - Ao logar, redirecione o usuário para a tela de dashboard.
   - A tela de login não pode ser acessível a usuários logados (redirecione ao dashboard)
  
-- Crie a funcionalidade de deslogar o usuário. 
+- **Funcionalidade de deslogar o usuário. **
+
+- **Navegação e renderização condicional**
+  - Na home, quando o usuário estiver logado, o botão da Navbar deverá ser `Dashboard`. Quando o usuário estiver deslogado, o botão deverá ser `Login`.
+  - Um usuário deslogado não poderá acessar a Dashboard.
+  - Um usuário logado não poderá acessar as telas de login e cadastro. 
 
 
 ## 🔨 Desafio extra para quem quer ir além
