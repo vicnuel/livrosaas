@@ -50,7 +50,7 @@ O layout está no Figma e já está implementado no projeto. Você não precisar
 
 ### Figma
 
-🔗 [Link do design]()
+🔗 [Link do design](https://www.figma.com/community/file/1431066927390390144/mini-projeto-saas-autenticacao-com-nextauth-prisma-e-next-js-15)
 
 ## 👉🏽 Sobre esse mini-projeto
 
