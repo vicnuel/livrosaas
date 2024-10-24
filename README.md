@@ -64,7 +64,6 @@ O layout está no Figma e já está implementado no projeto. Você não precisar
 #### NextAuth
 
 - Aprender sobre autenticação em aplicações Next.js.
-- Uso de callbacks e estratégias de autenticação.
 
 #### Prisma
 
