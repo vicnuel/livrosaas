@@ -13,7 +13,7 @@ Apesar de, na Dashboard, existir citação à assinaturas, não é necessário s
 - Faça a instalação e o setup do NextAuth v5 (a última versão é importante).
   - O único provedor que você irá usar neste Mini Projeto é o `Credentials` (login com email e senha). 
 
-- Crie e gerencie sua base de dados usando o Prisma
+- Crie e gerencie sua base de dados (sqlite, mysql ou postgres) usando o Prisma
   - Você precisará, pelo menos, de uma tabela de usuários
 	
     > 👀 **Dicas:**
@@ -64,6 +64,7 @@ O layout está no Figma e já está implementado no projeto. Você não precisar
 #### NextAuth
 
 - Aprender sobre autenticação em aplicações Next.js.
+- Integração do NextAuth com Prisma e base de dados. 
 
 #### Prisma
 
