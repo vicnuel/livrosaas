@@ -10,10 +10,10 @@ Apesar de, na Dashboard, existir citação à assinaturas, não é necessário s
 
 ## 🔨 Requisitos
 
-- Faça a instalação e o setup do NextAuth v5 (a última versão é importante).
+- **Faça a instalação e o setup do NextAuth v5 (a última versão é importante).**
   - O único provedor que você irá usar neste Mini Projeto é o `Credentials` (login com email e senha). 
 
-- Crie e gerencie sua base de dados (sqlite, mysql ou postgres) usando o Prisma
+- **Crie e gerencie sua base de dados (sqlite, mysql ou postgres) usando o Prisma**
   - Você precisará, pelo menos, de uma tabela de usuários
 	
     > 👀 **Dicas:**
