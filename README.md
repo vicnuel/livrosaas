@@ -59,7 +59,6 @@ O layout está no Figma e já está implementado no projeto. Você não precisar
 #### Next.js
 
 - Conhecimentos sobre a configuração de páginas e rotas dinâmicas.
-- Implementação de middlewares para proteger rotas de acesso restrito.
 
 #### NextAuth
 
