@@ -8,7 +8,7 @@ import { useActionState } from "react";
 import LoginAction from "@/infra/auth/login/loginAction";
 
 export function LoginForm() {
-  const [state, formAction, isPending] = useActionState(LoginAction, null);
+  const [state, formAction] = useActionState(LoginAction, null);
   return (
     <>
       {state?.message && (
