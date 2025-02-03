@@ -4,8 +4,32 @@ import Stripe from "stripe";
 export async function POST(req: Request) {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "");
+    const { email } = await req.json();
+
+    if (!email) {
+      return NextResponse.json(
+        { error: "O email é obrigatório." },
+        { status: 400 }
+      );
+    }
+
+    // Encontre ou crie um Customer associado ao email
+    let customer = await stripe.customers
+      .list({
+        email: email,
+        limit: 1,
+      })
+      .then((customers) => customers.data[0]);
+
+    if (!customer) {
+      customer = await stripe.customers.create({
+        email: email,
+      });
+    }
+
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
+      customer: customer.id,
       line_items: [
         {
           quantity: 1,

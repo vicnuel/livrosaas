@@ -16,6 +16,7 @@ import logo from "./assets/logo.svg";
 import womanImg from "./assets/woman.svg";
 import { auth } from "@/auth";
 import { fetchSubscriptionByEmail } from "@/lib/stripe";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   const session = await auth();
@@ -25,7 +26,7 @@ export default async function Home() {
   const subscription = await fetchSubscriptionByEmail(userEmail);
   return (
     <main>
-      <section className="container mx-auto text-center pb-20 px-2 md:px-0">
+      <section className="container mx-auto text-center pb-20 px-10">
         <nav className="flex justify-between items-center py-4">
           <Image src={logo} alt="Logotipo" />
           <DropdownMenu>
@@ -77,23 +78,25 @@ export default async function Home() {
               type="text"
               className="max-w-sm border-gray-300 border"
             />
-            <Button>Assine Agora</Button>
+            <Link href={session ? "/dashboard" : "/login"}>
+              <Button>Assine Agora</Button>
+            </Link>
           </div>
           <p className="text-xs text-muted-foreground mt-2">
             Comece sua assinatura agora mesmo. Cancele quando quiser.{" "}
           </p>
         </form>
       </section>
-      <section className="bg-white md:py-16 py-8" id="funcionamento">
+      <section className="bg-white md:py-16 py-14" id="funcionamento">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold text-center">
             Como funciona?
           </h2>
-          <div className="mx-24 xl:mx-80 flex flex-col md:flex-row items-center justify-between">
+          <div className="mx-10 xl:mx-80 flex flex-col md:flex-row items-center justify-between">
             <Image
               src={womanImg}
               alt="Mulher carregando caixas"
-              className="max-w-xs"
+              className="max-w-xs pb-5"
             />
             <ul className="md:text-2xl text-lg text-muted-foreground space-y-4 md:space-y-6 flex-shrink-0">
               <li className="flex items-center justify-between gap-4">
@@ -127,7 +130,7 @@ export default async function Home() {
           <PricingCard />
         </div>
       </section>
-      <section className="bg-white text-center">
+      <section className="bg-white text-center px-10">
         {!subscription && (
           <div className="md:py-16 py-10">
             <h2 className="md:text-6xl text-2xl font-bold md:mt-16">
@@ -137,7 +140,11 @@ export default async function Home() {
               Faça como milhares de outras pessoas. Assine nosso produto e tenha
               garantido seus estudos{" "}
             </p>
-            <Button className="mt-14 w-96">Assine Agora</Button>
+            <Button className="mt-14 w-full max-w-72 mb-5">
+              <Link href={"/login"} className="w-full">
+                Assine Agora
+              </Link>
+            </Button>
             <p className="text-xs text-muted-foreground mt-2">
               Comece sua assinatura agora mesmo. Cancele quando quiser.{" "}
             </p>

@@ -11,10 +11,11 @@ import { DialogTrigger, DialogContent, DialogTitle } from "./ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 type PaymentButtonProps = {
+  email?: string;
   children?: React.ReactNode;
 };
 
-export default function PaymentButton({ children }: PaymentButtonProps) {
+export default function PaymentButton({ email, children }: PaymentButtonProps) {
   const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? ""
   );
@@ -26,12 +27,15 @@ export default function PaymentButton({ children }: PaymentButtonProps) {
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({ email }),
     })
       .then((res) => res.json())
       .then((data) => data.client_secret);
   }, []);
 
-  const options = { fetchClientSecret };
+  const options = {
+    fetchClientSecret,
+  };
 
   return (
     <Dialog>

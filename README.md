@@ -1,76 +1,117 @@
-# Autenticação com NextAuth, Prisma e Next.js 15
+# LivroSaaS - SaaS de Livros
 
-Neste mini projeto, você irá implementar a autenticação em um hipotético SaaS de Livros de Programação. Usaremos o NextAuth para gerenciar a autenticação e o Prisma para a interação com o banco de dados, enquanto nosso frameworks será o Next.js 15. O design já está preparado, e o foco será na implementação das funcionalidades sem a necessidade de modificar muito o HTML e o CSS.
+<div align="center">
 
-## 🤓 Antes de começar
+![License](https://img.shields.io/github/license/vicnuel/livrosaas)
+![Next.js Version](https://img.shields.io/badge/next.js-15.1.4-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Prisma](https://img.shields.io/badge/Prisma-6.2.1-blue)
+![Stripe](https://img.shields.io/badge/Stripe-17.5.0-blue)
 
-Para este projeto, já temos o template inicial do projeto preparado no repositório. Ao fazer o fork você encontrará todos os arquivos iniciais. 
+</div>
 
-Apesar de, na Dashboard, existir citação à assinaturas, não é necessário se preocupar com assinaturas e pagamentos nesse Mini Projeto. O foco aqui é autenticação. 
+## 📚 Sobre o Projeto
 
-## 🔨 Requisitos
+LivroSaaS é uma aplicação web moderna desenvolvida com Next.js 15, oferecendo uma solução completa para gerenciamento de uma assinatura de livros online. O projeto inclui autenticação segura, integração com Stripe para pagamentos e outras funcionalidades SaaS (Software as a Service). O projeto utiliza tecnologias de ponta e segue as melhores práticas de desenvolvimento.
 
-- **Faça a instalação e o setup do NextAuth v5 (a última versão é importante).**
-  - O único provedor que você irá usar neste Mini Projeto é o `Credentials` (login com email e senha). 
+Design desenvolvido por [Condante](https://github.com/codante-io/mp-saas-next-auth-prisma-next)
 
-- **Crie e gerencie sua base de dados (sqlite, mysql ou postgres) usando o Prisma**
-  - Você precisará, pelo menos, de uma tabela de usuários
-	
-    > 👀 **Dicas:**
-    > - Consulte a documentação do NextAuth para entender como configurar o Prisma em conjunto com NextAuth.
+### 🌟 Principais Características
 
-- **Funcionalidade de registrar usuários usando a tela de cadastro**
-  - Use, na medida do possível, _server actions_.
-  - Um usuário deverá possuir _nome_, _email_ e _senha_.
-  - A senha deverá ser criptografada antes de ser salva na base de dados.
-  - A tela de cadastro não pode ser acessível a usuários logados (redirecione ao dashboard)
+- 🔐 Autenticação segura com NextAuth
+- 💳 Integração com Stripe para pagamentos
+- 🎨 Interface moderna com Tailwind CSS
+- 🔄 Banco de dados com Prisma
+- 🚀 Performance otimizada com Next.js 15
+- 🌐 Suporte a TypeScript
+- 🔒 Ambiente seguro com variáveis de ambiente
 
-      > 👀 **Dicas:**
-      > - O NextAuth auxilia apenas no login do usuário - a implementação do cadastro de usuário deverá ser feita por você.
+## 🛠️ Tecnologias Utilizadas
 
-- **Funcionalidade de logar usuários usando a tela de login**
-  - Use, na medida do possível, _server actions_.
-  - Ao logar, redirecione o usuário para a tela de dashboard.
-  - A tela de login não pode ser acessível a usuários logados (redirecione ao dashboard)
- 
-- **Funcionalidade de deslogar o usuário.**
+- [Next.js 15.1.4](https://nextjs.org/)
+- [React 19](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma](https://www.prisma.io/)
+- [Stripe](https://stripe.com/)
+- [NextAuth V5](https://next-auth.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-- **Navegação e renderização condicional**
-  - Na home, quando o usuário estiver logado, o botão da Navbar deverá ser `Dashboard`. Quando o usuário estiver deslogado, o botão deverá ser `Login`.
-  - Um usuário deslogado não poderá acessar a Dashboard.
-  - Um usuário logado não poderá acessar as telas de login e cadastro. 
+## 🚀 Como Executar
 
-## 🔨 Desafio extra para quem quer ir além
+### Pré-requisitos
 
-- Implemente uma página de perfil onde o usuário poderá visualizar e editar suas informações como _nome_ e _senha_. 
+- Node.js
+- pnpm
+- Uma conta no Stripe (para funcionalidades de pagamento)
 
-## 🎨 Design Sugerido
+### Configuração do Ambiente
 
-O layout está no Figma e já está implementado no projeto. Você não precisará implementá-lo. 
+1. Clone o repositório:
 
-### Figma
+```bash
+git clone https://github.com/vicnuel/livrosaas.git
+cd livrosaas
+```
 
-🔗 [Link do design](https://www.figma.com/community/file/1431066927390390144/mini-projeto-saas-autenticacao-com-nextauth-prisma-e-next-js-15)
+2. Instale as dependências:
 
-## 👉🏽 Sobre esse mini-projeto
+```bash
+pnpm install or npm install
+```
 
-### O que você irá praticar:
+3. Configure as variáveis de ambiente:
 
-#### Next.js
+```bash
+cp .env.example .env
+```
 
-- Conhecimentos sobre a configuração de páginas e rotas dinâmicas.
+Preencha as variáveis no arquivo `.env` com suas credenciais.
 
-#### NextAuth
+4. Inicie o banco de dados com Docker:
 
-- Aprender sobre autenticação em aplicações Next.js.
-- Integração do NextAuth com Prisma e base de dados. 
+```bash
+docker-compose up -d
+```
 
-#### Prisma
+5. Execute as migrações do Prisma:
 
-- Gerenciar banco de dados de forma eficiente e intuitiva.
-- Criação de modelos e migrações com Prisma.
+```bash
+pnpm prisma generate
+pnpm prisma db push
+```
 
+6. Inicie o servidor de desenvolvimento:
 
-### Pré requisitos
+```bash
+pnpm dev
+```
 
-- Conhecimentos em JavaScript, React e NextJs.
+A aplicação estará disponível em `http://localhost:3000`
+
+## 🌐 Estrutura do Projeto
+
+```
+livrosaas/
+├── app/                 # Páginas e rotas da aplicação
+├── components/          # Componentes React reutilizáveis
+├── lib/                 # Utilitários e configurações
+├── prisma/             # Schema e migrações do banco de dados
+├── public/             # Arquivos estáticos
+└── infra/              # Configurações de infraestrutura
+```
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👥 Contribuição
+
+Contribuições são sempre bem-vindas! Por favor, leia o guia de contribuição antes de submeter alterações.
+
+1. Faça o Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas alterações (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+Link do Projeto: [https://github.com/vicnuel/livrosaas](https://github.com/vicnuel/livrosaas)

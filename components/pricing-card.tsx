@@ -11,6 +11,7 @@ import { Button } from "./ui/button";
 import PaymentButton from "./payment-button";
 import { auth } from "@/auth";
 import { fetchSubscriptionByEmail } from "@/lib/stripe";
+import Link from "next/link";
 
 export default async function PricingCard() {
   const session = await auth();
@@ -52,7 +53,16 @@ export default async function PricingCard() {
         </ul>
       </CardContent>
       <CardFooter>
-        {!subscription && <PaymentButton>Comprar agora</PaymentButton>}
+        {!subscription && session && (
+          <PaymentButton email={userEmail}>Comprar agora</PaymentButton>
+        )}
+        {!session && (
+          <Button className="w-full">
+            <Link href="/login" className="w-full">
+              Faça login para assinar
+            </Link>
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );
